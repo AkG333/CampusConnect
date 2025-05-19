@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ask a Question - Campus Connect</title>
+</head>
+<body>
+
+<!-- Include Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<h1>Ask a Question</h1>
+
+<form th:action="@{/ask}" th:object="${questionDTO}" method="post">
+    <label>Title:</label><br>
+    <input type="text" th:field="*{title}" required/><br><br>
+
+    <label>Description:</label><br>
+    <textarea th:field="*{description}" rows="5" cols="40" required></textarea><br><br>
+
+    <button type="submit">Post Question</button>
+</form>
+
+</body>
+</html>
