@@ -7,12 +7,12 @@ import java.util.List;
 
 public interface AnswerService {
 
-    // Method to post a new answer
-    void postAnswer(AnswerDTO answerDTO);
+    // Save an answer linked to a specific question
+    void saveAnswer(Long questionId, AnswerDTO answerDTO);
 
-    // Method to get answers by question ID
-    List<Answer> getAnswersByQuestionId(Long questionId);
+    // Get all answers for a specific question
+    List<Answer> getAnswersForQuestion(Long questionId);
 
-    // Method to get a specific answer by ID
+    // Get an answer by its ID
     Answer getAnswerById(Long id);
 }

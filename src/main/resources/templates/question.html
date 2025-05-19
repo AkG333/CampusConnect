@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'Question: ' + ${question.title}">Question</title>
+</head>
+<body>
+
+<!-- Include Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<h1 th:text="${question.title}">Question Title</h1>
+<p th:text="${question.description}">Question Description</p>
+
+<h2>Answers:</h2>
+<ul>
+    <li th:each="a : ${answers}">
+        <p th:text="${a.content}"></p>
+    </li>
+</ul>
+
+<h3>Submit an Answer</h3>
+<form th:action="@{'/questions/' + ${question.id} + '/answers'}" method="post" th:object="${answerDTO}">
+    <textarea th:field="*{content}" rows="4" cols="40" required></textarea><br>
+    <button type="submit">Post Answer</button>
+</form>
+
+</body>
+</html>

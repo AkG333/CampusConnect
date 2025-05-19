@@ -12,8 +12,11 @@
 <h2>All Questions:</h2>
 <ul>
     <li th:each="q : ${questions}">
-        <b th:text="${q.title}"></b>: <span th:text="${q.description}"></span>
+        <a th:href="@{'/question/' + ${q.id}}">
+            <b th:text="${q.title}"></b>
+        </a>: <span th:text="${q.description}"></span>
     </li>
 </ul>
+
 </body>
 </html>

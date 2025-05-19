@@ -3,23 +3,24 @@ package com.campusconnect.backend.dto;
 import java.time.LocalDateTime;
 
 public class AnswerDTO {
-    private Long id; // This field can be useful for PUT/PATCH or responses
+
+    private Long id;
     private String content;
     private Long userId;
     private Long questionId;
     private LocalDateTime createdAt;
 
-    // Default constructor
-    public AnswerDTO() {}
-
-    // Constructor for creating new answers (without ID)
-    public AnswerDTO(String content, Long userId, Long questionId) {
-        this.content = content;
-        this.userId = userId;
-        this.questionId = questionId;
+    public AnswerDTO() {
+        // Default constructor for form binding
     }
 
-    // Constructor for responses with full data
+    // Constructor for creating a new answer (no ID or timestamp yet)
+    public AnswerDTO(String content, Long userId) {
+        this.content = content;
+        this.userId = userId;
+    }
+
+    // Full constructor (e.g., for service-to-controller DTO response)
     public AnswerDTO(Long id, String content, Long userId, Long questionId, LocalDateTime createdAt) {
         this.id = id;
         this.content = content;

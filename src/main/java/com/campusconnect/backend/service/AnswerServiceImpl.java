@@ -16,29 +16,23 @@ public class AnswerServiceImpl implements AnswerService {
     private AnswerDAO answerDAO;
 
     @Override
-    public void postAnswer(AnswerDTO answerDTO) {
-        // Create a new Answer object
+    public void saveAnswer(Long questionId, AnswerDTO answerDTO) {
         Answer answer = new Answer();
         answer.setContent(answerDTO.getContent());
         answer.setUserId(answerDTO.getUserId());
-        answer.setQuestionId(answerDTO.getQuestionId());
+        answer.setQuestionId(questionId); // set from path variable
         answer.setCreatedAt(LocalDateTime.now());
 
-        // Save the answer using the DAO
         answerDAO.saveAnswer(answer);
     }
 
     @Override
-    public List<Answer> getAnswersByQuestionId(Long questionId) {
-        // Get the list of answers by question ID using the DAO
+    public List<Answer> getAnswersForQuestion(Long questionId) {
         return answerDAO.getAnswersByQuestionId(questionId);
     }
 
     @Override
     public Answer getAnswerById(Long id) {
-        // Get a specific answer by ID using the DAO
         return answerDAO.getAnswerById(id);
     }
-
-
 }
