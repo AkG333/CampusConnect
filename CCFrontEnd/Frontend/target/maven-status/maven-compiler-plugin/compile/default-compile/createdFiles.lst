@@ -1,0 +1,14 @@
+com\campusconnect\frontend\dto\LoginRequest.class
+com\campusconnect\frontend\controller\LoginController$1.class
+com\campusconnect\frontend\dto\QuestionDTO.class
+com\campusconnect\frontend\MainApplication.class
+com\campusconnect\frontend\controller\SignupController$1.class
+com\campusconnect\frontend\controller\LoginController.class
+com\campusconnect\frontend\controller\MainAppController.class
+com\campusconnect\frontend\model\User.class
+com\campusconnect\frontend\controller\SignupController.class
+module-info.class
+com\campusconnect\frontend\model\Question.class
+com\campusconnect\frontend\util\ApiUtil.class
+com\campusconnect\frontend\controller\MainAppController$1.class
+com\campusconnect\frontend\controller\MainAppController$1$1.class

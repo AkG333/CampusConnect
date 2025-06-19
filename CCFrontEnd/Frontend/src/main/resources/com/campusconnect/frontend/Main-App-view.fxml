@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.campusconnect.frontend.controller.MainAppController">
+    <top>
+        <VBox alignment="CENTER" style="-fx-background-color: #2c3e50; -fx-padding: 20;" BorderPane.alignment="CENTER">
+            <Label text="CampusConnect Dashboard" style="-fx-text-fill: white;">
+                <font>
+                    <Font name="Inter Bold" size="24.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" spacing="15.0">
+                <Button text="Post New Question" onAction="#handlePostQuestionButton" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 18; -fx-border-radius: 5; -fx-background-radius: 5;" />
+                <Button text="Refresh Questions" onAction="#handleRefreshQuestionsButton" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 18; -fx-border-radius: 5; -fx-background-radius: 5;" />
+                <Button text="Logout" onAction="#handleLogoutButton" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 18; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="10.0" BorderPane.alignment="CENTER" style="-fx-padding: 20;">
+            <Label text="All Questions" style="-fx-text-fill: #34495e;">
+                <font>
+                    <Font name="Inter Bold" size="20.0" />
+                </font>
+            </Label>
+            <ListView fx:id="questionsListView" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-color: #ffffff;" />
+            <Label fx:id="statusLabel" textFill="#e74c3c" wrapText="true" alignment="CENTER" maxWidth="500" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
+        </VBox>
+    </center>
+</BorderPane>
